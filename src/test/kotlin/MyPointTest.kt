@@ -8,8 +8,8 @@ internal class MyPointTest {
         val point = MyPoint()
         point.setX(1.0)
         point.setY(2.0)
-        assertEquals(1.0, point.getX())
-        assertEquals(2.0, point.getY())
+        assertEquals(1.0, point.x)
+        assertEquals(2.0, point.y)
     }
 
     @Test
@@ -18,8 +18,8 @@ internal class MyPointTest {
         val point = MyPoint()
         point.setX(-1.0)
         point.setY(-2.0)
-        assertEquals(-1.0, point.getX())
-        assertEquals(-2.0, point.getY())
+        assertEquals(-1.0, point.x)
+        assertEquals(-2.0, point.y)
     }
 
     @Test
@@ -29,8 +29,8 @@ internal class MyPointTest {
         point.setX(1.0)
         point.setY(2.0)
         point.movePoint(1.0, 1.0)
-        assertEquals(2.0, point.getX())
-        assertEquals(3.0, point.getY())
+        assertEquals(2.0, point.x)
+        assertEquals(3.0, point.y)
     }
 
     @Test
@@ -40,8 +40,8 @@ internal class MyPointTest {
         point.setX(1.0)
         point.setY(2.0)
         point.movePoint(-2.0, -4.0)
-        assertEquals(-1.0, point.getX())
-        assertEquals(-2.0, point.getY())
+        assertEquals(-1.0, point.x)
+        assertEquals(-2.0, point.y)
     }
 
     @Test
@@ -51,8 +51,8 @@ internal class MyPointTest {
         point.setX(1.0)
         point.setY(2.0)
         point.movePoint(0.0, 0.0)
-        assertEquals(1.0, point.getX())
-        assertEquals(2.0, point.getY())
+        assertEquals(1.0, point.x)
+        assertEquals(2.0, point.y)
     }
 
     @Test
@@ -62,8 +62,8 @@ internal class MyPointTest {
         point.setX(1.0)
         point.setY(2.0)
         point.movePoint(-0.0, -0.0)
-        assertEquals(1.0, point.getX())
-        assertEquals(2.0, point.getY())
+        assertEquals(1.0, point.x)
+        assertEquals(2.0, point.y)
     }
 
     @Test
@@ -73,8 +73,8 @@ internal class MyPointTest {
         point.setX(1.0)
         point.setY(2.0)
         point.movePoint(-1.0, 1.0)
-        assertEquals(0.0, point.getX())
-        assertEquals(3.0, point.getY())
+        assertEquals(0.0, point.x)
+        assertEquals(3.0, point.y)
     }
 
     @Test
@@ -84,8 +84,8 @@ internal class MyPointTest {
         point.setX(1.0)
         point.setY(2.0)
         point.movePoint(1.0, -1.0)
-        assertEquals(2.0, point.getX())
-        assertEquals(1.0, point.getY())
+        assertEquals(2.0, point.x)
+        assertEquals(1.0, point.y)
     }
 
     @Test
@@ -95,8 +95,8 @@ internal class MyPointTest {
         point.setX(1.0)
         point.setY(2.0)
         val point2 = point.clonePoint()
-        assertEquals(1.0, point2.getX())
-        assertEquals(2.0, point2.getY())
+        assertEquals(1.0, point2.x)
+        assertEquals(2.0, point2.y)
     }
 
 }

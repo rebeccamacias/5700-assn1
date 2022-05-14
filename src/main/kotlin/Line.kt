@@ -7,7 +7,7 @@ class Line(private var givenPoint1: MyPoint, private var givenPoint2: MyPoint?):
             return 0.0
         }
         return sqrt(
-            (givenPoint1.getX() - givenPoint2!!.getX()).pow(2.0) + (givenPoint1.getY() - givenPoint2!!.getY()).pow(2.0)
+            (givenPoint1.x - givenPoint2!!.x).pow(2.0) + (givenPoint1.y - givenPoint2!!.y).pow(2.0)
         )
     }
 
@@ -29,7 +29,7 @@ class Line(private var givenPoint1: MyPoint, private var givenPoint2: MyPoint?):
         if (givenPoint2 == null) {
             return 0.0
         }
-        return (givenPoint1.getY() - givenPoint2!!.getY()) / (givenPoint1.getX() - givenPoint2!!.getX())
+        return (givenPoint1.y - givenPoint2!!.y) / (givenPoint1.x - givenPoint2!!.x)
     }
 
     fun getGivenPoint1(): MyPoint {

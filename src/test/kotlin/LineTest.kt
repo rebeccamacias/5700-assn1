@@ -60,10 +60,10 @@ internal class LineTest {
         point2.setY(1.0)
         var line = Line(point1, point2)
         assertEquals(2, line.getPoints().size)
-        assertEquals(0.0, line.getPoints()[0].getX())
-        assertEquals(0.0, line.getPoints()[0].getY())
-        assertEquals(1.0, line.getPoints()[1].getX())
-        assertEquals(1.0, line.getPoints()[1].getY())
+        assertEquals(0.0, line.getPoints()[0].x)
+        assertEquals(0.0, line.getPoints()[0].y)
+        assertEquals(1.0, line.getPoints()[1].x)
+        assertEquals(1.0, line.getPoints()[1].y)
     }
 
     @Test
@@ -74,8 +74,8 @@ internal class LineTest {
         var point2 = null
         var line = Line(point1, point2)
         assertEquals(1, line.getPoints().size)
-        assertEquals(0.0, line.getPoints()[0].getX())
-        assertEquals(0.0, line.getPoints()[0].getY())
+        assertEquals(0.0, line.getPoints()[0].x)
+        assertEquals(0.0, line.getPoints()[0].y)
         assertThrows(IndexOutOfBoundsException::class.java) {
             line.getPoints()[1]
         }
@@ -91,10 +91,10 @@ internal class LineTest {
         point2.setY(1.0)
         var line = Line(point1, point2)
         line.moveShape(1.0, 1.0)
-        assertEquals(1.0, line.getPoints()[0].getX())
-        assertEquals(1.0, line.getPoints()[0].getY())
-        assertEquals(2.0, line.getPoints()[1].getX())
-        assertEquals(2.0, line.getPoints()[1].getY())
+        assertEquals(1.0, line.getPoints()[0].x)
+        assertEquals(1.0, line.getPoints()[0].y)
+        assertEquals(2.0, line.getPoints()[1].x)
+        assertEquals(2.0, line.getPoints()[1].y)
     }
 
     @Test
@@ -104,8 +104,8 @@ internal class LineTest {
         point1.setY(0.0)
         var line = Line(point1, null)
         line.moveShape(1.0, 2.0)
-        assertEquals(1.0, line.getPoints()[0].getX())
-        assertEquals(2.0, line.getPoints()[0].getY())
+        assertEquals(1.0, line.getPoints()[0].x)
+        assertEquals(2.0, line.getPoints()[0].y)
         assertThrows(java.lang.IndexOutOfBoundsException::class.java) {
             line.getPoints()[1]
         }
@@ -169,8 +169,8 @@ internal class LineTest {
         point3.setX(1.0)
         point3.setY(1.0)
         line.setGivenPoint1(point3)
-        assertEquals(1.0, line.getGivenPoint1().getX())
-        assertEquals(1.0, line.getGivenPoint1().getY())
+        assertEquals(1.0, line.getGivenPoint1().x)
+        assertEquals(1.0, line.getGivenPoint1().y)
     }
 
     @Test
@@ -183,8 +183,8 @@ internal class LineTest {
         point3.setX(1.0)
         point3.setY(1.0)
         line.setGivenPoint1(point3)
-        assertEquals(1.0, line.getGivenPoint1().getX())
-        assertEquals(1.0, line.getGivenPoint1().getY())
+        assertEquals(1.0, line.getGivenPoint1().x)
+        assertEquals(1.0, line.getGivenPoint1().y)
     }
 
     @Test
