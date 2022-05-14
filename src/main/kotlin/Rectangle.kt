@@ -1,8 +1,8 @@
 import kotlin.math.abs
 
 open class Rectangle(private var topLeftCorner: MyPoint, private var bottomRightCorner: MyPoint ): Shape() {
-    private val width: Double = abs(bottomRightCorner.getX() - topLeftCorner.getX())
-    private val height: Double = abs(bottomRightCorner.getY() - topLeftCorner.getY())
+    private val width: Double = abs(bottomRightCorner.x - topLeftCorner.x)
+    private val height: Double = abs(bottomRightCorner.y - topLeftCorner.y)
 
     fun getWidth(): Double {
         return width

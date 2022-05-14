@@ -4,7 +4,6 @@ class MyPoint () {
     var y: Double = 0.0
     private set
 
-
     fun setX(x: Double) {
         this.x = x
     }

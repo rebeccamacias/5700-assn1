@@ -1,7 +1,11 @@
 import kotlin.math.pow
 import kotlin.math.sqrt
 
-class Line(private var givenPoint1: MyPoint, private var givenPoint2: MyPoint?): Shape() {
+class Line(): Shape() {
+    var givenPoint1 = MyPoint()
+    private set
+    var givenPoint2: MyPoint? = null
+    private set
     override fun getArea(): Double {
         if (givenPoint2 == null) {
             return 0.0
@@ -32,20 +36,16 @@ class Line(private var givenPoint1: MyPoint, private var givenPoint2: MyPoint?):
         return (givenPoint1.y - givenPoint2!!.y) / (givenPoint1.x - givenPoint2!!.x)
     }
 
-    fun getGivenPoint1(): MyPoint {
-        return givenPoint1
-    }
-
-    fun getGivenPoint2(): MyPoint? {
-        return givenPoint2
-    }
-
     fun setGivenPoint1(givenPoint1: MyPoint) {
         this.givenPoint1 = givenPoint1
     }
 
     fun setGivenPoint2(givenPoint2: MyPoint?) {
-        this.givenPoint2 = givenPoint2
+        if (this.givenPoint2 == givenPoint1) {
+            throw IllegalArgumentException("Points cannot be the same")
+        } else {
+            this.givenPoint2 = givenPoint2
+        }
     }
 
 }
