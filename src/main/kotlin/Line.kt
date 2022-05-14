@@ -41,8 +41,19 @@ class Line(): Shape() {
     }
 
     fun setGivenPoint2(givenPoint2: MyPoint?) {
-        if (this.givenPoint2 == givenPoint1) {
-            throw IllegalArgumentException("Points cannot be the same")
+        if (givenPoint2 == null) {
+            this.givenPoint2 = null
+            return
+        }
+        if (givenPoint2!!.x == this.givenPoint1.x && givenPoint2!!.y == this.givenPoint1.y) {
+            println(
+                "Error: givenPoint2 cannot be the same as givenPoint1. " +
+                "Setting to automatic value (givenPoint1.x + 1.0, givenPoint1.y + 1.0)"
+            )
+            var autoPoint = MyPoint()
+            autoPoint.setX(this.givenPoint1.x + 1.0)
+            autoPoint.setY(this.givenPoint1.y + 1.0)
+            this.givenPoint2 = autoPoint
         } else {
             this.givenPoint2 = givenPoint2
         }

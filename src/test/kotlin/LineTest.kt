@@ -245,4 +245,21 @@ internal class LineTest {
         line.setGivenPoint2(null)
         assertNull(line.givenPoint2)
     }
+
+    @Test
+    fun getSetEqualPoints() {
+        var point1 = MyPoint()
+        point1.setX(7.0)
+        point1.setY(0.0)
+        var point2 = MyPoint()
+        point2.setX(7.0)
+        point2.setY(0.0)
+        var line = Line()
+        line.setGivenPoint1(point1)
+        line.setGivenPoint2(point2)
+        assertEquals(7.0, line.givenPoint1.x)
+        assertEquals(0.0, line.givenPoint1.y)
+        assertEquals(8.0, line.givenPoint2!!.x)
+        assertEquals(1.0, line.givenPoint2!!.y)
+    }
 }
