@@ -1,4 +1,4 @@
-class Point () {
+class MyPoint () {
     private var x: Double = 0.0
     private var y: Double = 0.0
 
@@ -14,10 +14,11 @@ class Point () {
     fun setY(y: Double) {
         this.y = y
     }
-    fun clonePoint(): Point {
-        return Point()
-//        return Point(x, y)
-        //TODO: figure out what the heck is going on here
+    fun clonePoint(): MyPoint {
+        val newPoint = MyPoint()
+        newPoint.setX(this.x)
+        newPoint.setY(this.y)
+        return newPoint
     }
     fun movePoint(xDelta: Double, yDelta: Double) {
         x += xDelta
