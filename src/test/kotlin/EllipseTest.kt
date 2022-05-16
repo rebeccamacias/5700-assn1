@@ -42,6 +42,26 @@ internal class EllipseTest {
     }
 
     @Test
+    fun getAreaOneZero() {
+        val radius1 = 0.0
+        val radius2 = 2.0
+        val ellipse = Ellipse()
+        ellipse.setRadius1(radius1)
+        ellipse.setRadius2(radius2)
+        assertNotEquals(0.0, ellipse.getArea())
+    }
+
+    @Test
+    fun getAreaBothZeros() {
+        val radius1 = 0.0
+        val radius2 = 0.0
+        val ellipse = Ellipse()
+        ellipse.setRadius1(radius1)
+        ellipse.setRadius2(radius2)
+        assertNotEquals(0.0, ellipse.getArea())
+    }
+
+    @Test
     fun moveShape() {
         val point = MyPoint()
         point.setX(0.0)
