@@ -1,3 +1,5 @@
+import kotlin.math.abs
+
 class Ellipse() : Shape() {
     var centerPoint = MyPoint()
         private set
@@ -11,20 +13,26 @@ class Ellipse() : Shape() {
     }
 
     fun setRadius1(radius: Double) {
-        if (radius <= 0){
-            println("Radius must be greater than 0. Setting radius to 1")
+        if (radius == 0.0){
+            println("Radius cannot be 0. Setting radius to 1")
             this.radius1 = 1.0
         } else {
-            this.radius1 = radius
+            if (radius < 0) {
+                println("Radius cannot be negative. Using absolute value of passed in radius")
+            }
+            this.radius1 = abs(radius)
         }
     }
 
     fun setRadius2(radius: Double) {
-        if (radius <= 0){
-            println("Radius must be greater than 0. Setting radius to 1")
+        if (radius == 0.0){
+            println("Radius cannot be 0. Setting radius to 1")
             this.radius2 = 1.0
         } else {
-            this.radius2 = radius
+            if (radius < 0) {
+                println("Radius cannot be negative. Using absolute value of passed in radius")
+            }
+            this.radius2 = abs(radius)
         }
     }
 
