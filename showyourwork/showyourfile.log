@@ -17,3 +17,7 @@
 t-platform-commons/1.8.1/junit-platform-commons-1.8.1.jar!/org/junit/platform/commons/util/ReflectionUtils.class
 /src/test/kotlin/RectangleTest.java
 /src/test/kotlin/RectangleTest.kt
+/src/main/kotlin/MyTriangle.kt
+/src/test/kotlin/TriangleTest.java
+/src/test/kotlin/TriangleTest0.java
+/src/test/kotlin/TriangleTest.kt
