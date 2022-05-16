@@ -1,6 +1,6 @@
 import kotlin.math.abs
 
-open class Rectangle(): Shape() {
+open class Rectangle: Shape() {
     var topLeftCorner = MyPoint()
         private set
     var bottomRightCorner = MyPoint()
@@ -8,7 +8,7 @@ open class Rectangle(): Shape() {
     private var width: Double = abs(bottomRightCorner.x - topLeftCorner.x)
     private var height: Double = abs(bottomRightCorner.y - topLeftCorner.y)
 
-    open fun recalculateWidthAndHeight() {
+    private fun recalculateWidthAndHeight() {
         setWidth(abs(bottomRightCorner.x - topLeftCorner.x))
         if (width == 0.0) {
             println("Width cannot be 0. Setting width to 1.0 and updating bottomRightCorner.")
@@ -35,7 +35,7 @@ open class Rectangle(): Shape() {
         return width
     }
 
-    fun setWidth(newWidth: Double) {
+    private fun setWidth(newWidth: Double) {
         width = newWidth
     }
 
@@ -43,7 +43,7 @@ open class Rectangle(): Shape() {
         return height
     }
 
-    fun setHeight(newHeight: Double) {
+    private fun setHeight(newHeight: Double) {
         height = newHeight
     }
 

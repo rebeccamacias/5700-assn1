@@ -89,7 +89,7 @@ internal class RectangleTest {
     }
 
     @Test
-    fun setZeroWidth() {
+    fun tryZeroWidth() {
         val rectangle = Rectangle()
         val point1 = MyPoint()
         point1.setX(1.0)

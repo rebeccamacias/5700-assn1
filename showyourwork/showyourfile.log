@@ -21,3 +21,5 @@ t-platform-commons/1.8.1/junit-platform-commons-1.8.1.jar!/org/junit/platform/co
 /src/test/kotlin/TriangleTest.java
 /src/test/kotlin/TriangleTest0.java
 /src/test/kotlin/TriangleTest.kt
+/src/test/kotlin/SquareTest.java
+/src/test/kotlin/SquareTest.kt
