@@ -1,12 +1,41 @@
 import kotlin.math.abs
 
-open class Rectangle: Shape() {
+class Square: Shape() {
     var topLeftCorner = MyPoint()
         private set
     var bottomRightCorner = MyPoint()
         private set
     private var width: Double = abs(bottomRightCorner.x - topLeftCorner.x)
     private var height: Double = abs(bottomRightCorner.y - topLeftCorner.y)
+
+    private fun setWidth(width: Double) {
+        this.width = width
+    }
+
+    private fun setHeight(height: Double) {
+        if (height != width) {
+            println("The height and width must be equal. Adjusting height to be equal." +
+                    " Adjusting bottom right corner as well.")
+            bottomRightCorner.setX(topLeftCorner.x + 5.0)
+            bottomRightCorner.setY(topLeftCorner.y - 5.0)
+            this.height = abs(bottomRightCorner.y - topLeftCorner.y)
+        } else {
+            this.height = height
+        }
+    }
+
+    fun setTopLeftCorner(point: MyPoint) {
+        this.topLeftCorner = point
+    }
+
+    fun setBottomRightCorner(point: MyPoint) {
+        if (bottomRightCorner.x == 0.0 && bottomRightCorner.y == 0.0) {
+            this.bottomRightCorner = point
+        } else {
+            this.bottomRightCorner = point
+            recalculateWidthAndHeight()
+        }
+    }
 
     private fun recalculateWidthAndHeight() {
         setWidth(abs(bottomRightCorner.x - topLeftCorner.x))
@@ -23,36 +52,15 @@ open class Rectangle: Shape() {
         }
     }
 
-    fun setTopLeftCorner(point: MyPoint) {
-        this.topLeftCorner = point
-    }
-
-    fun setBottomRightCorner(point: MyPoint) {
-        this.bottomRightCorner = point
-        recalculateWidthAndHeight()
-    }
-    fun getWidth(): Double {
-        return width
-    }
-
-    private fun setWidth(newWidth: Double) {
-        width = newWidth
-    }
-
-    fun getHeight(): Double {
-        return height
-    }
-
-    private fun setHeight(newHeight: Double) {
-        height = newHeight
-    }
 
     override fun getArea(): Double {
-        return abs(width * height)
+        recalculateWidthAndHeight()
+        return width * height
     }
 
     override fun moveShape(xDelta: Double, yDelta: Double) {
         topLeftCorner.movePoint(xDelta, yDelta)
         bottomRightCorner.movePoint(xDelta, yDelta)
     }
+
 }

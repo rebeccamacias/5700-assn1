@@ -1,13 +1,9 @@
 class MyPoint () {
-    private var x: Double = 0.0
-    private var y: Double = 0.0
+    var x: Double = 0.0
+    private set
+    var y: Double = 0.0
+    private set
 
-    fun getX(): Double {
-        return x
-    }
-    fun getY(): Double {
-        return y
-    }
     fun setX(x: Double) {
         this.x = x
     }

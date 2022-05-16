@@ -1,11 +1,11 @@
 import kotlin.math.abs
 
-class Circle: Shape() {
+class Ellipse() : Shape() {
     var centerPoint = MyPoint()
         private set
-    var radius1: Double = Double.NEGATIVE_INFINITY
+    var radius1: Double = 1.0
         private set
-    var radius2: Double = Double.NEGATIVE_INFINITY
+    var radius2: Double = 1.0
         private set
 
     fun setCenterPoint(point: MyPoint) {
@@ -13,9 +13,9 @@ class Circle: Shape() {
     }
 
     fun setRadius1(radius: Double) {
-        if (radius == 0.0 || (radius != radius2 && radius2 != Double.NEGATIVE_INFINITY)) {
-            println("Radius cannot be 0 and must be equal to radius 2. Setting radius equal to radius 2")
-            this.radius1 = radius2
+        if (radius == 0.0){
+            println("Radius cannot be 0. Setting radius to 1")
+            this.radius1 = 1.0
         } else {
             if (radius < 0) {
                 println("Radius cannot be negative. Using absolute value of passed in radius")
@@ -25,9 +25,9 @@ class Circle: Shape() {
     }
 
     fun setRadius2(radius: Double) {
-        if (radius == 0.0 || (radius != radius1 && radius1 != Double.NEGATIVE_INFINITY)){
-            println("Radius cannot be 0 and must be equal to radius 1. Setting radius equal to radius 2")
-            this.radius2 = radius1
+        if (radius == 0.0){
+            println("Radius cannot be 0. Setting radius to 1")
+            this.radius2 = 1.0
         } else {
             if (radius < 0) {
                 println("Radius cannot be negative. Using absolute value of passed in radius")

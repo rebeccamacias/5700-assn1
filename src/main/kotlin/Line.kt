@@ -1,13 +1,17 @@
 import kotlin.math.pow
 import kotlin.math.sqrt
 
-class Line(private var givenPoint1: MyPoint, private var givenPoint2: MyPoint?): Shape() {
+class Line(): Shape() {
+    var givenPoint1 = MyPoint()
+    private set
+    var givenPoint2: MyPoint? = null
+    private set
     override fun getArea(): Double {
         if (givenPoint2 == null) {
             return 0.0
         }
         return sqrt(
-            (givenPoint1.getX() - givenPoint2!!.getX()).pow(2.0) + (givenPoint1.getY() - givenPoint2!!.getY()).pow(2.0)
+            (givenPoint1.x - givenPoint2!!.x).pow(2.0) + (givenPoint1.y - givenPoint2!!.y).pow(2.0)
         )
     }
 
@@ -29,15 +33,7 @@ class Line(private var givenPoint1: MyPoint, private var givenPoint2: MyPoint?):
         if (givenPoint2 == null) {
             return 0.0
         }
-        return (givenPoint1.getY() - givenPoint2!!.getY()) / (givenPoint1.getX() - givenPoint2!!.getX())
-    }
-
-    fun getGivenPoint1(): MyPoint {
-        return givenPoint1
-    }
-
-    fun getGivenPoint2(): MyPoint? {
-        return givenPoint2
+        return (givenPoint1.y - givenPoint2!!.y) / (givenPoint1.x - givenPoint2!!.x)
     }
 
     fun setGivenPoint1(givenPoint1: MyPoint) {
@@ -45,7 +41,22 @@ class Line(private var givenPoint1: MyPoint, private var givenPoint2: MyPoint?):
     }
 
     fun setGivenPoint2(givenPoint2: MyPoint?) {
-        this.givenPoint2 = givenPoint2
+        if (givenPoint2 == null) {
+            this.givenPoint2 = null
+            return
+        }
+        if (givenPoint2!!.x == this.givenPoint1.x && givenPoint2!!.y == this.givenPoint1.y) {
+            println(
+                "Error: givenPoint2 cannot be the same as givenPoint1. " +
+                "Setting to automatic value (givenPoint1.x + 1.0, givenPoint1.y + 1.0)"
+            )
+            var autoPoint = MyPoint()
+            autoPoint.setX(this.givenPoint1.x + 1.0)
+            autoPoint.setY(this.givenPoint1.y + 1.0)
+            this.givenPoint2 = autoPoint
+        } else {
+            this.givenPoint2 = givenPoint2
+        }
     }
 
 }
